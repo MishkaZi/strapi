@@ -2,9 +2,7 @@
   "scripts": {
     "frontend": "npm run dev --prefix ../frontend/",
     "backend": "npm run dev --prefix ../backend/",
-    "clear": "powershell -Command \"cd frontend; if (Test-Path .next) { rmdir /s /q .next }; if (Test-Path cache) { rmdir /s /q cache }\"",
-
-
+    "clear": "powershell -Command \"cd frontend; if (Test-Path .next) { Remove-Item .next -Recurse -Force }; if (Test-Path cache) { Remove-Item cache -Recurse -Force }\"",
     "setup:frontend": "cd frontend && npm install",
     "setup:backend": "cd backend && npm install",
     "setup": "npm install && npm run setup:frontend && npm run setup:backend",
